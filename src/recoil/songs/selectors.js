@@ -2,6 +2,7 @@ import { selector } from "recoil";
 
 import { album, artist, playlist, episode } from "./atoms";
 
+// son asincronos, llamadas apis
 export const filterType = selector({
   key: "filterType",
   get: ({ get }) => {

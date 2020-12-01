@@ -18,9 +18,16 @@ export default function Home() {
   const [tokenResponse] = useRecoilState(spotifyTokenResponse);
   const [searchResponse, setSearchResponse] = useRecoilState(spotifyResult);
   const [filterType] = useRecoilState(filterTypeSelector);
+
+  // will return to default value, if not have will use the set
   const resetFilter = useResetRecoilState(filterTypeSelector);
 
   const handleSearchClick = async () => {
+    /*
+    let type ="track";
+    if(!!album) type += `,${album}`;
+    */
+
     let type = filterType ?? "track";
     const paramsArray = [{
       q: searchText
